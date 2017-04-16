@@ -1,0 +1,28 @@
+---
+title: "Test Plotly"
+author: "Philip To"
+date: "April 15, 2017"
+output: html_document
+---
+
+```{r setup, echo=FALSE, include=FALSE} 
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warnings = FALSE) 
+
+library(ggplot2) 
+library(knitr)
+
+
+```
+
+```{r, echo=FALSE, results="hide", warning=FALSE} 
+
+  suppressPackageStartupMessages({library(plotly)})
+
+```
+
+```{r, echo=FALSE, warning=FALSE}
+  d <- data.frame(x=rnorm(100), y=rnorm(100))
+  g<- ggplot(d, aes(x,y)) + geom_point()
+  ggplotly(g)
+
+```
